@@ -1,50 +1,82 @@
-/* style.css */
 body {
     background: rgb(170, 170, 170); 
-    margin: 0; 
+    margin: 0;
+    font-family: Inter; 
 }
 
 #header {
     width: 100%;
-    height: 178px;
-    left: 0px;
-    top: 0px;
-    position: absolute;
     background: #1A642E;
+    height: calc(500px - 50vw);
+    min-height: 120px; 
+    max-height: 100%;  
+}
+
+@media only screen and (max-width: 793px) {
+    #header {
+        height: 250px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    #header {
+        height: 200px;
+    }
 }
 
 #title {
-    width: 1210px;
-    height: 120px;
-    left: 115px;
-    top: 40px;
-    position: absolute;
+    margin-left: 2%;
+    top: 60px;
     color: whitesmoke;
     font-size: 100px;
     font-family: Inter;
     font-style: italic;
     font-weight: 100;
     word-wrap: break-word;
+    width: 100%; 
 }
 
 #sub-header {
     width: 100%;
     height: 30px;
-    left: 0px;
-    top: 171px;
-    position: absolute;
     background: #519C65;
+    
 }
 #container_link{
     display: flex;
     justify-content: space-between; 
     justify-content: space-evenly; 
-    top: 216px;
-    width: 100%; 
-    position: absolute; 
+    width: 100%;
+    margin-top: 3vh; 
     
 }
 .logo {
     width: 40px;
     height: 40px;  
+}
+
+#container_column {
+    display: flex;
+    justify-content: center;  
+    width: calc(100% - 20px); 
+    box-sizing: border-box;
+    margin-top: 15px;
+
+}
+
+.column {
+    width: 50%;
+    box-sizing: border-box;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.column h2 {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.column h4 {
+    font-style: italic;
+    margin-bottom: 10px;
 }
