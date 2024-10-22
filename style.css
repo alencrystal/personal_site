@@ -4,9 +4,17 @@ body {
     font-family: Inter; 
 }
 
-#header {
+.header_green {
     width: 100%;
     background: #1A642E;
+    height: calc(500px - 50vw);
+    min-height: 120px; 
+    max-height: 100%;  
+}
+
+.header_red {
+    width: 100%;
+    background: #a60e0e;
     height: calc(500px - 50vw);
     min-height: 120px; 
     max-height: 100%;  
@@ -24,6 +32,19 @@ body {
     }
 }
 
+.sub_header_green {
+    width: 100%;
+    height: 30px;
+    background: #519C65;
+    
+}
+
+.sub_header_red {
+    width: 100%;
+    height: 30px;
+    background: #da3c3c;
+    
+}
 #title {
     margin-left: 2%;
     top: 60px;
@@ -36,12 +57,7 @@ body {
     width: 100%; 
 }
 
-#sub-header {
-    width: 100%;
-    height: 30px;
-    background: #519C65;
-    
-}
+
 #container_link{
     display: flex;
     justify-content: space-between; 
