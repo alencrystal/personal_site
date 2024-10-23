@@ -1,12 +1,21 @@
 body {
-    background: rgb(170, 170, 170); 
+    /* background: rgb(170, 170, 170);  */ 
+    background: whitesmoke;
     margin: 0;
     font-family: Inter; 
 }
 
 .header_green {
     width: 100%;
-    background: #1A642E;
+    background: #006d1d;
+    height: calc(500px - 50vw);
+    min-height: 120px; 
+    max-height: 100%;  
+}
+
+.header_blue {
+    width: 100%;
+    background: #1f1a79;
     height: calc(500px - 50vw);
     min-height: 120px; 
     max-height: 100%;  
@@ -35,7 +44,14 @@ body {
 .sub_header_green {
     width: 100%;
     height: 30px;
-    background: #519C65;
+    background: #324199;
+    
+}
+
+.sub_header_blue {
+    width: 100%;
+    height: 30px;
+    background: #324199;
     
 }
 
@@ -58,7 +74,7 @@ body {
 }
 
 
-#container_link{
+.container_link{
     display: flex;
     justify-content: space-between; 
     justify-content: space-evenly; 
@@ -66,12 +82,12 @@ body {
     margin-top: 3vh; 
     
 }
-.logo {
+.container_link .logo {
     width: 40px;
     height: 40px;  
 }
 
-#container_column {
+.container_column {
     display: flex;
     justify-content: center;  
     width: calc(100% - 60px); 
@@ -80,18 +96,61 @@ body {
 
 }
 
-.column {
+.container_column .column {
     width: 50%;
     box-sizing: border-box;
     margin-left: 60px;
     text-align: center;
 }
 
-.column h2 {
+.container_column .column h2 {
     font-style: italic;
 }
 
-.column h3 {
+.container_column .column h3 {
     font-style: italic;
     margin-top: 10px;
+}
+
+.link{    
+    text-decoration: none;
+}
+
+.link:visited {
+    color: black
+}
+
+.container_corricolum {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    max-width: 800px; 
+    margin: 0 auto;  
+}
+
+.container_corricolum .left-column,
+.container_corricolum .right-column {
+    padding: 20px;
+}
+
+.container_corricolum .left-column {
+    border-right: 1px solid #ccc;
+}
+
+.container_corricolum .profile-picture {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 50%; 
+}
+
+.container_corricolum .data_share {
+    font-size: smaller;
+    margin-top: 60px;
+}
+
+.container_corricolum h1{
+    text-align: center;
+
 }
