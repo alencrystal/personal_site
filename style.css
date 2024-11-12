@@ -1,9 +1,25 @@
 body {
-    /* background: rgb(170, 170, 170);  */ 
     background: whitesmoke;
     margin: 0;
-    font-family: Inter; 
+    font-family: Inter;
 }
+
+body.dark-mode {
+    background-color: #333; 
+    color: whitesmoke;
+
+    a {
+        color: whitesmoke; /* Link bianchi */
+    }
+    .logo {
+        filter: invert(100%); /* Inverti i colori delle icone */
+    }
+
+    h1, h2, h3, p {
+        color: whitesmoke;
+    }
+}
+
 
 .header_green {
     width: 100%;
@@ -120,7 +136,7 @@ body {
     color: black
 }
 
-.container_corricolum {
+.container_curriculum {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     gap: 20px;
@@ -128,16 +144,16 @@ body {
     margin: 0 auto;  
 }
 
-.container_corricolum .left-column,
-.container_corricolum .right-column {
+.container_curriculum .left-column,
+.container_curriculum .right-column {
     padding: 20px;
 }
 
-.container_corricolum .left-column {
+.container_curriculum .left-column {
     border-right: 1px solid #ccc;
 }
 
-.container_corricolum .profile-picture {
+.container_curriculum .profile-picture {
     width: 150px;
     height: auto;
     display: block;
@@ -145,12 +161,27 @@ body {
     border-radius: 50%; 
 }
 
-.container_corricolum .data_share {
+.container_curriculum .data_share {
     font-size: smaller;
     margin-top: 60px;
 }
 
-.container_corricolum h1{
+.container_curriculum h1{
     text-align: center;
 
+}
+
+.fixed-circle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(255, 239, 58);
+}
+
+.img_mode {
+    width: 50px;
+    height: 50px;  
 }
