@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #333 url('https://static.vecteezy.com/system/resources/previews/007/233/624/non_2x/brick-black-wall-texture-background-dark-brickwork-pattern-block-stone-structure-backdrop-dark-brick-wall-realistic-template-abstract-modern-wallpaper-design-illustration-vector.jpg') center/cover;
+    min-height: 100vh;
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+.portfolio-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.name-title {
+    text-align: center;
+    color: white;
+    font-size: 3.5rem;
+    margin: 2rem 0 4rem;
+    letter-spacing: 0.2em;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.card {
+    background-color: #333;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    min-height: 200px;
+}
+
+.card.green { background-color: #2A893D; }
+.card.blue { background-color: #352A89; }
+.card.yellow { background-color: #89892A; }
+.card.red { background-color: #892A2C; }
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1rem;
+}
+
+.control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card-content ul {
+    list-style-type: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.card-content ul li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.card-content ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .name-title {
+        font-size: 2rem;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+}
