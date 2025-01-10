@@ -5,17 +5,47 @@
 }
 
 body {
-    background: #333 url('https://static.vecteezy.com/system/resources/previews/007/233/624/non_2x/brick-black-wall-texture-background-dark-brickwork-pattern-block-stone-structure-backdrop-dark-brick-wall-realistic-template-abstract-modern-wallpaper-design-illustration-vector.jpg') center/cover;
+    background: #3e3e3e;
     min-height: 100vh;
     font-family: 'Julius Sans One', sans-serif;
+    background-image: url('/images/brick_wall.png');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: center;
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Sovrapposizione trasparente */
+    z-index: -1; /* Va dietro al contenuto */
 }
 
 .portfolio-container {
     width: 100%;
-    min-height: 100vh;
     padding: 2rem;
-    background-color: rgba(0, 0, 0, 0.7);
+    
 }
+
+.card {
+
+    box-shadow: 10px 10px 20px rgba(0, 0, 0);
+    position: relative;
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid black;
+}
+
+.window-controls {
+    display: flex;
+    border-bottom: 2px solid black;
+}
+
+
 
 .name-title {
     text-align: center;
@@ -24,6 +54,7 @@ body {
     margin: 2rem 0 4rem;
     letter-spacing: 0.2em;
 }
+
 
 .cards-container {
     display: grid;
@@ -35,10 +66,9 @@ body {
 }
 
 .card {
-    background-color: #333;
-    border-radius: 15px;
+    
+    border-radius: 20px;
     padding: 1rem;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     position: relative;
     min-height: 200px;
 }
@@ -53,22 +83,54 @@ body {
     gap: 8px;
     margin-bottom: 1rem;
 }
+.positioned-cards {
+    position: relative; 
+    height: 600px;
+     
+}
 
-.control {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.3);
+.card {
+    position: absolute;
+    min-width: 300px;
+}
+
+.card.green {
+    top: 0;
+    left: 20%;;
+}
+
+.card.yellow {
+    top: 50px;
+    left: 55%;
+}
+
+.card.blue {
+    top: 300px;
+    left: 15%;
+}
+
+.card.red {
+    top: 350px;
+    left: 50%;
+}
+
+
+.control-icon {
+    width: 16px;
+    height: 16px; 
+    filter: brightness(0%);
+    margin-bottom: 5px;
 }
 
 .card-content {
     padding: 1rem;
+    
 }
 
 .card-content ul {
     list-style-type: none;
-    color: white;
-    font-size: 1.2rem;
+    color: black;
+    font-size: 1rem;
 }
 
 .card-content ul li {
@@ -93,7 +155,6 @@ body {
 .social-icon {
     width: 40px;
     height: 40px;
-    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
 }
 
