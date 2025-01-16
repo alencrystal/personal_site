@@ -195,3 +195,54 @@ body.dark-mode::before{
 }
 
 
+/* Per la transizione del titolo */
+.name-title {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideIn 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+/* Per la transizione delle card */
+.card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideIn 0.8s ease-out forwards;
+}
+
+/* Ritardo per ogni card */
+.card:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.card:nth-child(4) {
+    animation-delay: 1s;
+}
+
+/* Definizione dell'animazione */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aggiungere transizioni per una visibilità più fluida */
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}

@@ -35,3 +35,11 @@ window.onload = () => {
   // Aggiorna l'immagine del pulsante
   updateImage();
 };
+document.addEventListener("DOMContentLoaded", () => {
+  const title = document.querySelector('.name-title');
+  const cards = document.querySelectorAll('.card');
+
+  // Attiviamo l'animazione per il titolo e le card
+  title.classList.add('animated');
+  cards.forEach(card => card.classList.add('animated'));
+});
