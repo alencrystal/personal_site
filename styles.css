@@ -85,7 +85,7 @@ body.dark-mode::before{
 }
 
 .card.green { background-color: #2A893D; }
-.card.blue { background-color: #352A89; }
+.card.blue { background-color: #4033a1; }
 .card.yellow { background-color: #89892A; }
 .card.red { background-color: #892A2C; }
 
@@ -167,7 +167,14 @@ body.dark-mode::before{
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    transition: transform 0.2s ease;
 }
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+
 
 @media (max-width: 768px) {
     .name-title {
