@@ -7,12 +7,15 @@
 body {
     min-height: 100vh;
     font-family: 'Julius Sans One', sans-serif;
-    background-image: url('/images/brick_wall.png');
+    background-image: url('/images/brick_wall.jpg');
+    background-color: whitesmoke;
+
+    /*
     background-size: cover;
     background-repeat: no-repeat; 
     background-attachment: fixed; 
     background-position: center;
-    background-color: whitesmoke;
+    */
     
 }
 body.dark-mode {
@@ -33,8 +36,25 @@ body::before {
 }
 
 body.dark-mode::before{
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.90);
 }
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body::before {
+    transition: background-color 0.3s ease;
+}
+
+.image_mode {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.card {
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
 
 .portfolio-container {
     width: 100%;
@@ -85,9 +105,12 @@ body.dark-mode::before{
 }
 
 .card.green { background-color: #2A893D; }
-.card.blue { background-color: #4033a1; }
+.card.purple { background-color: #4033a1; }
 .card.yellow { background-color: #89892A; }
+.card.orange { background-color: #af5018; }
 .card.red { background-color: #892A2C; }
+.card.blue { background-color: #2542a0; }
+
 
 .window-controls {
     display: flex;
@@ -107,24 +130,33 @@ body.dark-mode::before{
 
 .card.green {
     top: 0;
-    left: 20%;;
+    left: 15%;;
 }
 
-.card.blue {
+.card.purple {
     top: 50px;
     left: 55%;
 }
 
 .card.yellow {
     top: 300px;
-    left: 15%;
+    left: 20%;
 }
 
 .card.red {
     top: 350px;
-    left: 50%;
+    left: 60%;
 }
 
+.card.blue {
+    top: 600px;
+    left: 10%;;
+}
+
+.card.orange {
+    top: 650px;
+    left: 45%;
+}
 
 .control-icon {
     width: 16px;
@@ -187,7 +219,7 @@ body.dark-mode::before{
 }
 
 .image_mode {
-    position: fixed;
+    position: absolute;
     top: 140px; 
     right: 70px;
     width: 200px; 
@@ -233,6 +265,15 @@ body.dark-mode::before{
 .card:nth-child(4) {
     animation-delay: 1s;
 }
+
+.card:nth-child(5) {
+    animation-delay: 1.2s;
+}
+
+.card:nth-child(6) {
+    animation-delay: 1.4s;
+}
+
 
 /* Definizione dell'animazione */
 @keyframes slideIn {
