@@ -104,12 +104,13 @@ body::before {
     min-height: 200px;
 }
 
-.card.green { background-color: #2A893D; }
-.card.purple { background-color: #4033a1; }
-.card.yellow { background-color: #89892A; }
-.card.orange { background-color: #af5018; }
-.card.red { background-color: #892A2C; }
-.card.blue { background-color: #2542a0; }
+.card.red { background-color: #D24753; }
+.card.green { background-color: #52AA8A; }
+.card.blue { background-color: #3876A8; }
+.card.yellow { background-color: #DC903E; }
+.card.purple { background-color: #836EED; }
+.card.brown { background-color: #9D6E58; }
+
 
 
 .window-controls {
@@ -128,32 +129,33 @@ body::before {
     min-width: 300px;
 }
 
-.card.green {
+
+.card.red {
     top: 0;
     left: 15%;;
 }
 
-.card.purple {
+.card.green {
     top: 50px;
     left: 55%;
 }
 
-.card.yellow {
+.card.blue {
     top: 300px;
     left: 20%;
 }
 
-.card.red {
+.card.yellow {
     top: 350px;
     left: 60%;
 }
 
-.card.blue {
+.card.purple {
     top: 600px;
     left: 10%;;
 }
 
-.card.orange {
+.card.brown {
     top: 650px;
     left: 45%;
 }
