@@ -19,7 +19,7 @@ function updateImage() {
   const imgMode = document.querySelector(".image_mode"); // Correggi la classe in "image_mode"
   
   // Aggiorna il percorso dell'immagine in base alla modalità dark
-  imgMode.src = document.body.classList.contains("dark-mode") ? "/personal_site/images/moon.png" : "/personal_site/images/sun.png";
+  imgMode.src = document.body.classList.contains("dark-mode") ? "images/moon.png" : "images/sun.png";
   
   // Aggiorna il testo alternativo per migliorare l'accessibilità
   imgMode.alt = document.body.classList.contains("dark-mode") ? "Moon" : "Sun";
