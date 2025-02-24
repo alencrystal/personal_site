@@ -7,7 +7,7 @@
 body {
     min-height: 100vh;
     font-family: 'Julius Sans One', sans-serif;
-    background-image: url('/images/brick_wall.jpg');
+    background-image: url('images/brick_wall.jpg');
     background-color: whitesmoke;
 
     /*
