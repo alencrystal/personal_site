@@ -222,12 +222,14 @@ body::before {
 
 .image_mode {
     position: absolute;
-    top: 140px; 
-    right: 70px;
-    width: 200px; 
+    width: 15vw; /* Larghezza relativa al viewport */
+    max-width: 200px; /* Larghezza massima */
+    min-width: 60px; /* Larghezza minima */
     height: auto; 
     cursor: pointer; 
     z-index: 10; 
+    right: 5vw;
+    top: calc(2rem + 3.5rem); /* Si posiziona sotto il titolo considerando il margin-top del titolo + altezza approssimativa */
     transition: transform 0.3s ease; 
 }
 
@@ -235,6 +237,27 @@ body::before {
     transform: scale(1.1);
 }
 
+@media (max-width: 768px) {
+    .name-title {
+        font-size: 2rem;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .image_mode {
+        top: calc(1rem + 2rem); /* Aggiustamento per il titolo più piccolo su mobile */
+        width: 12vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .image_mode {
+        top: calc(1rem + 1.5rem);
+        width: 10vw;
+    }
+}
 
 /* Per la transizione del titolo */
 .name-title {
@@ -295,4 +318,131 @@ body::before {
     flex-direction: column;
     align-items: center;
     gap: 15px;
+}
+
+/* Media Queries per Mobile */
+@media (max-width: 768px) {
+    .portfolio-container {
+        padding: 1rem;
+    }
+
+    .name-title {
+        font-size: 2rem;
+        margin: 1rem 0 2rem;
+        padding: 0 1rem;
+    }
+
+    .positioned-cards {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem;
+        position: relative;
+    }
+
+    .card {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 90%;
+        min-width: unset;
+        max-width: 400px;
+        margin: 0;
+        transform: none !important;
+    }
+
+    .card.red,
+    .card.green,
+    .card.blue,
+    .card.yellow,
+    .card.purple,
+    .card.brown {
+        position: relative;
+        left: auto;
+        top: auto;
+    }
+
+    .social-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+        padding: 0.8rem;
+    }
+
+    .social-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .card-content {
+        padding: 0.8rem;
+    }
+
+    .card-content ul li {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-container {
+        padding: 0.5rem;
+    }
+
+    .name-title {
+        font-size: 1.5rem;
+        margin: 1rem 0 1.5rem;
+    }
+
+    .card {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .window-controls {
+        margin-bottom: 0.5rem;
+    }
+
+    .control-icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .social-grid {
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+
+    .social-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .card-content {
+        padding: 0.5rem;
+    }
+
+    .card-content ul li {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Manteniamo le animazioni anche per mobile */
+@media (max-width: 768px) {
+    .card {
+        animation-name: slideInMobile;
+    }
+
+    @keyframes slideInMobile {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 }
