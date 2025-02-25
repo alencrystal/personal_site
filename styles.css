@@ -7,15 +7,13 @@
 body {
     min-height: 100vh;
     font-family: 'Julius Sans One', sans-serif;
-    background-image: url('images/brick_wall.jpg');
+    background-image: url('images/background_castle.png');
     background-color: whitesmoke;
-
-    /*
     background-size: cover;
     background-repeat: no-repeat; 
     background-attachment: fixed; 
     background-position: center;
-    */
+
     
 }
 body.dark-mode {
