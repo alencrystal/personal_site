@@ -46,7 +46,20 @@ body::before {
 }
 
 .image_mode {
-    transition: transform 0.3s ease, filter 0.3s ease;
+    position: absolute;
+    width: 10vw; /* Reduced from 15vw */
+    max-width: 100px; /* Reduced from 200px */
+    min-width: 40px; /* Reduced from 60px */
+    height: auto; 
+    cursor: pointer; 
+    z-index: 10; 
+    right: 5vw;
+    top: calc(2rem + 3.5rem); /* Si posiziona sotto il titolo considerando il margin-top del titolo + altezza approssimativa */
+    transition: transform 0.3s ease; 
+}
+
+.image_mode:hover {
+    transform: scale(1.1);
 }
 
 .card {
@@ -216,44 +229,17 @@ body::before {
     .cards-container {
         grid-template-columns: 1fr;
     }
-}
-
-.image_mode {
-    position: absolute;
-    width: 15vw; /* Larghezza relativa al viewport */
-    max-width: 200px; /* Larghezza massima */
-    min-width: 60px; /* Larghezza minima */
-    height: auto; 
-    cursor: pointer; 
-    z-index: 10; 
-    right: 5vw;
-    top: calc(2rem + 3.5rem); /* Si posiziona sotto il titolo considerando il margin-top del titolo + altezza approssimativa */
-    transition: transform 0.3s ease; 
-}
-
-.image_mode:hover {
-    transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-    .name-title {
-        font-size: 2rem;
-    }
-    
-    .cards-container {
-        grid-template-columns: 1fr;
-    }
     
     .image_mode {
         top: calc(1rem + 2rem); /* Aggiustamento per il titolo più piccolo su mobile */
-        width: 12vw;
+        width: 8vw; /* Reduced from 12vw */
     }
 }
 
 @media (max-width: 480px) {
     .image_mode {
         top: calc(1rem + 1.5rem);
-        width: 10vw;
+        width: 7vw; /* Reduced from 10vw */
     }
 }
 
@@ -443,4 +429,39 @@ body::before {
             transform: translateY(0);
         }
     }
+}
+
+.curriculum-container {
+    margin: 5% auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.curriculum-container .curriculum {
+    width: 60%;
+    height: 60%;
+}
+
+.curriculum-link {
+    color: black;
+    text-decoration: none;
+}
+
+.curriculum-link:visited {
+    color: black;
+}
+
+.home-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.2s ease;
+    filter: invert(100%);
+}
+
+.home-button:hover {
+    transform: scale(1.1);
 }
