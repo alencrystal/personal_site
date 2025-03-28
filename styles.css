@@ -18,7 +18,7 @@ body {
 }
 body.dark-mode {
     background-color: #3e3e3e; 
-    color: whitesmoke;
+    /*color: whitesmoke; */
     
 }
 
@@ -586,4 +586,30 @@ body::before {
     scale: 1;
     opacity: 1;
     visibility: visible;
+}
+
+.card_music {
+    border-radius: 20px;
+    padding: 1rem;
+    min-height: 200px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0);
+    position: relative;
+    margin-top: 10%;
+    margin-inline: 15%;
+    border: 2px solid black;
+    background-color: rgba(82, 170, 138, 0.8);
+    
+}
+.card_music {
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideIn 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+.music_card_content{
+    margin: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;  
 }
