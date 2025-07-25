@@ -1,11 +1,5 @@
 // script.js
 function toggleDarkMode() {
-    // Aggiungi transizioni fluide
-    document.body.style.transition = "background-color 0.5s ease, color 0.3s ease";
-    document.querySelectorAll('.card').forEach(card => {
-        card.style.transition = "background-color 0.5s ease, transform 0.3s ease";
-    });
-
     // Attiva/disattiva la modalità dark
     document.body.classList.toggle("dark-mode");
     
@@ -49,6 +43,8 @@ function initializePage() {
     
     // Animazioni di entrata
     animateElements();
+
+    setupAboutSection();
 }
 
 // Animazioni degli elementi
@@ -87,3 +83,30 @@ window.addEventListener('DOMContentLoaded', () => {
     // Per sicurezza, richiama anche al completo caricamento
     window.addEventListener('load', initializePage);
 });
+
+
+// funzioni per la sezione About
+function setupAboutSection() {
+    const aboutCard = document.querySelector('.about-card');
+    const aboutSection = document.getElementById('about-section');
+    
+    // Click sulla card: scroll alla sezione
+    aboutCard.addEventListener('click', () => {
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    // Gestione della visibilità durante lo scroll
+    window.addEventListener('scroll', () => {
+        const sectionPosition = aboutSection.getBoundingClientRect();
+        const isVisible = (
+            sectionPosition.top < window.innerHeight * 0.8 &&
+            sectionPosition.bottom > window.innerHeight * 0.2
+        );
+        
+        if (isVisible) {
+            aboutSection.classList.add('visible');
+        } else {
+            aboutSection.classList.remove('visible');
+        }
+    });
+}

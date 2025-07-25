@@ -23,6 +23,18 @@ body.dark-mode {
     background-image: url('images/background_castle_night.png');
     color: #f0f0f0;
 }
+body, .card, 
+.about-section, 
+.about-content,
+.social-icon {
+    transition: 
+        background-color 0.5s ease, 
+        color 0.5s ease,
+        border-color 0.5s ease,
+        transform 0.3s ease,
+        filter 0.5s ease;
+}
+
 
 /* Theme Toggle */
 .theme-toggle {
@@ -90,7 +102,6 @@ body.dark-mode {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeInUp 0.8s ease-out forwards;
     opacity: 0;
 }
@@ -105,6 +116,9 @@ body.dark-mode .card {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
+.about-card {
+    cursor: pointer;
+}
 /* Window Controls */
 .window-controls {
     display: flex;
@@ -159,16 +173,10 @@ body.dark-mode .card {
 
 /* Social Links */
 .social-links {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.social-icon {
-    width: 36px;
-    height: 36px;
-    transition: transform 0.3s ease;
+    justify-items: center;
 }
 
 .social-icon:hover {
@@ -179,7 +187,6 @@ body.dark-mode .card {
 .social-icon {
     width: 36px;
     height: 36px;
-    transition: transform 0.3s ease, filter 0.3s ease;
     filter: brightness(0); /* Icone nere in light mode */
 }
 
@@ -201,7 +208,6 @@ body.dark-mode .social-icon:hover {
     color: inherit;
     text-decoration: none;
     position: relative;
-    transition: color 0.3s ease;
 }
 
 .link:hover {
@@ -222,6 +228,94 @@ body.dark-mode .social-icon:hover {
 
 .link:hover::after {
     transform: scaleX(1);
+}
+
+/* About Section */
+.about-section {
+    margin-top: 10rem;
+    margin-inline: auto;
+    max-width: 900px;
+    padding: 4rem 2rem 8rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+
+.about-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-content {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+body.dark-mode .about-content {
+    background: rgba(42, 46, 52, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-content h2 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.about-skills {
+    margin-top: 2rem;
+}
+
+.about-skills h3 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-skills ul {
+    list-style-type: none;
+}
+
+.about-skills li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.about-skills li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #836EED;
+    font-weight: bold;
+}
+
+body.dark-mode .about-skills li::before {
+    color: #9e8aff;
+}
+
+/* Animazione per la sezione */
+@keyframes fadeInUpSection {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Animations */
