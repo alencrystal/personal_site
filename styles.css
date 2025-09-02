@@ -24,7 +24,8 @@ body.dark-mode {
     color: #f0f0f0;
 }
 body, .card, 
-.about-section, 
+.about-section,
+.project-section,
 .about-content,
 .social-icon {
     transition: 
@@ -69,6 +70,7 @@ body, .card,
     color: white;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
     animation: fadeInDown 1s ease-out;
+    text-align: center;
 }
 
 .subtitle {
@@ -119,6 +121,7 @@ body.dark-mode .card {
 .about-card {
     cursor: pointer;
 }
+
 /* Window Controls */
 .window-controls {
     display: flex;
@@ -302,8 +305,46 @@ body.dark-mode .about-content {
     font-weight: bold;
 }
 
-body.dark-mode .about-skills li::before {
-    color: #9e8aff;
+/* Project Section */
+.project-section {
+    margin-inline: auto;
+    max-width: 1400px;
+    padding: 4rem 2rem 8rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+
+.project-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-content {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+body.dark-mode .project-content {
+    background: rgba(42, 46, 52, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.project-section h3 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+.project-section li::before {
+    content: "•";
+    position: absolute;
 }
 
 /* Animazione per la sezione */

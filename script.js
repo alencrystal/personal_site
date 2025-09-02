@@ -44,7 +44,9 @@ function initializePage() {
     // Animazioni di entrata
     animateElements();
 
+    // setup delle sezioni
     setupAboutSection();
+    setupProjectSection();
 }
 
 // Animazioni degli elementi
@@ -107,6 +109,32 @@ function setupAboutSection() {
             aboutSection.classList.add('visible');
         } else {
             aboutSection.classList.remove('visible');
+        }
+    });
+}
+
+// funzioni per la sezione project
+function setupProjectSection() {
+    const projectCard = document.querySelector('.project-link');
+    const projectSection = document.getElementById('project-section');
+
+    // Click sulla card: scroll alla sezione
+    projectCard.addEventListener('click', () => {
+        projectSection.scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    // Gestione della visibilità durante lo scroll
+    window.addEventListener('scroll', () => {
+        const sectionPosition = projectSection.getBoundingClientRect();
+        const isVisible = (
+            sectionPosition.top < window.innerHeight * 0.8 &&
+            sectionPosition.bottom > window.innerHeight * 0.2
+        );
+        
+        if (isVisible) {
+            projectSection.classList.add('visible');
+        } else {
+            projectSection.classList.remove('visible');
         }
     });
 }
