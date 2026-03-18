@@ -39,7 +39,7 @@ body, .card,
 
 /* Theme Toggle */
 .theme-toggle {
-    position: fixed;
+    position: absolute;
     width: 40px;
     height: 40px;
     top: 20px;
@@ -53,7 +53,24 @@ body, .card,
     transform: scale(1.1) rotate(15deg);
     opacity: 0.9;
 }
+.language-toggle {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 101;
+}
 
+.language-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    opacity: 0.9;
+}
+body {
+    position: relative;
+}
 /* Hero Section */
 .hero-section {
     text-align: center;
@@ -215,6 +232,7 @@ body.dark-mode .social-icon:hover {
 
 .link:hover {
     color: #836EED;
+    cursor: pointer;
 }
 
 .link::after {

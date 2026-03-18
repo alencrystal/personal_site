@@ -23,6 +23,31 @@ function updateThemeIcon() {
     themeToggle.title = isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode";
 }
 
+function toggleLanguage() {
+    const currentPath = window.location.pathname.split('/').pop();
+    if (currentPath === "index_eng.html") {
+        window.location.href = "index.html";
+    } else {
+        window.location.href = "index_eng.html";
+    }
+}
+
+function updateLanguageIcon() {
+    const languageToggle = document.querySelector(".language-toggle");
+    if (!languageToggle) return;
+
+    const currentPath = window.location.pathname.split('/').pop();
+    if (currentPath === "index_eng.html") {
+        languageToggle.src = "images/ita.png";
+        languageToggle.alt = "Switch to Italian";
+        languageToggle.title = "Passa a Italiano";
+    } else {
+        languageToggle.src = "images/eng.png";
+        languageToggle.alt = "Switch to English";
+        languageToggle.title = "Switch to English";
+    }
+}
+
 function animateThemeToggle() {
     const themeToggle = document.querySelector(".theme-toggle");
     themeToggle.style.transform = "scale(1.2) rotate(180deg)";
@@ -40,6 +65,7 @@ function initializePage() {
     
     // Aggiorna l'icona
     updateThemeIcon();
+    updateLanguageIcon();
     
     // Animazioni di entrata
     animateElements();
